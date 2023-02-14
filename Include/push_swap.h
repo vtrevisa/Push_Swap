@@ -5,6 +5,7 @@
 
 typedef struct s_data
 {
+	int err_code;
 	int	top_a;
 	int	top_b;
 	int	max;
@@ -18,6 +19,12 @@ typedef struct s_data
 	int *list;
 
 } t_data;
+
+/*----arg_check.c*/
+int	arg_check(int argc, char **argv, t_data *d);
+void handle_arg_error(int n);
+int check_if_repeated(int argc, char **argv, t_data *d);
+int check_if_all_number(int argc, char **argv, t_data *d);
 
 /*----init_fct.c----*/
 void get_parameters(int argc, char **argv, t_data *d);

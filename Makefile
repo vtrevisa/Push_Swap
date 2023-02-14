@@ -5,7 +5,7 @@ OBJ_D	= ./objects
 
 #--MANDATORY--
 SRC_D	= ./src/
-SRC		= init_fct.c main.c push.c radix_sort.c rotate.c rrotate.c small_sort.c \
+SRC		= arg_check.c init_fct.c main.c push.c radix_sort.c rotate.c rrotate.c small_sort.c \
 		swap.c utils.c
 OBJ		= $(addprefix $(OBJ_D)/, $(SRC:.c=.o))
 

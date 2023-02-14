@@ -25,7 +25,7 @@ static int push_bit(t_data *d, int bit, int bigger_number)
 		if (((d->a[d->top_a] >> bit) & 1) == 1)
 			rotate_a(d);
 		else
-			push_b;
+			push_b(d);
 		index_list++;
 	}
 }
@@ -36,15 +36,18 @@ void radix_sort(t_data *d)
 	int	size_bigger_bits;
 	int	biggest_number;
 
-	index_bit = 0;
-	size_bigger_bits = get_bit_size(d->big);
-	biggest_number = d->big;
-
-	while (index_bit < size_bigger_bits)
+	while (supervisor(d, d->a) == -1)
 	{
-		push_bit(d, index_bit, biggest_number);
-		while (d->b[d->top_b])
-			push_b(d);
-		index_bit++;
+		index_bit = 0;
+		size_bigger_bits = get_bit_size(d->max);
+		biggest_number = d->big;
+
+		while (index_bit < size_bigger_bits)
+		{
+			push_bit(d, index_bit, biggest_number);
+			while (d->b[d->top_b])
+				push_a(d);
+			index_bit++;
+		}
 	}
 }

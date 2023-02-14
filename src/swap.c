@@ -12,7 +12,6 @@ void swap_a(t_data *d)
 		d->a[d->top_a - 1] = swp;
 	}
 	d->moves += 1;
-	strct(d);
 }
 
 void swap_b(t_data *d)
@@ -27,7 +26,6 @@ void swap_b(t_data *d)
 		d->b[d->top_b - 1] = swp;
 	}
 	d->moves += 1;
-	strct(d);
 }
 
 void swap_a_b(t_data *d)
@@ -49,5 +47,4 @@ void swap_a_b(t_data *d)
 		d->b[d->top_b - 1] = swp;
 	}
 	d->moves += 1;
-	strct(d);
 }

@@ -42,6 +42,7 @@ int supervisor(t_data *d, int *n)
 			return (-1);
 		i++;
 	}
+	ft_printf("SORTED! ;)\n");
 	return (0);
 }
 
@@ -49,6 +50,7 @@ void simplifier(t_data *d)
 {
 	int	*copy;
 	int	index;
+	int flag;
 	int	i;
 	int	j;
 
@@ -58,14 +60,19 @@ void simplifier(t_data *d)
 	while (i < d->max)
 	{
 		j = 0;
+		flag = 0;
 		while (j < d->max)
 		{
-			if (d->a[i] == copy[j])
-				d->a[i] = j + 1;
+			if (d->a[i] == copy[j] && flag == 0)
+			{
+				d->a[i] = j;
+				flag = 1;
+			}
 			j++;
 		}
 		i++;
 	}
+	free (copy);
 }
 
 int *sort_free(t_data *d, int *stack)
@@ -76,7 +83,7 @@ int *sort_free(t_data *d, int *stack)
 	int	cmp;
 
 	index = 0;
-	rslt = malloc (sizeof (int *) * d->max);
+	rslt = malloc (sizeof(int *) * d->max);
 	while (index < d->max)
 	{
 		rslt[index] = stack[index];
