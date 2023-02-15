@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   rotate.c                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:34 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 20:25:27 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-void rotate_a(t_data *d)
+void	rotate_a(t_data *d)
 {
 	int	swp;
 	int	index;
@@ -17,7 +29,7 @@ void rotate_a(t_data *d)
 	d->moves += 1;
 }
 
-void rotate_b(t_data *d)
+void	rotate_b(t_data *d)
 {
 	int	swp;
 	int	index;
@@ -34,7 +46,7 @@ void rotate_b(t_data *d)
 	d->moves += 1;
 }
 
-void rotate_a_b(t_data *d)
+void	rotate_a_b(t_data *d)
 {
 	int	swp;
 	int	index;

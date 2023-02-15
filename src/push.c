@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   push.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:26 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 22:25:04 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-void push_a (t_data *d)
+void	push_a(t_data *d)
 {
 	int	swp;
 
@@ -16,7 +28,7 @@ void push_a (t_data *d)
 	d->moves += 1;
 }
 
-void push_b (t_data *d)
+void	push_b(t_data *d)
 {
 	int	swp;
 

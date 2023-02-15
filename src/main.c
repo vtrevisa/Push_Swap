@@ -1,12 +1,24 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:18 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 20:24:29 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-void free_all(t_data *d)
+void	free_all(t_data *d)
 {
 	free(d->a);
 	free(d->b);
 }
 
-int call_sort(int argc, t_data *data)
+int	call_sort(int argc, t_data *data)
 {
 	if (argc < 3)
 		return (0);
@@ -23,10 +35,10 @@ int call_sort(int argc, t_data *data)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
-	t_data data;
-	int error;
+	t_data	data;
+	int		error;
 
 	error = arg_check(argc, argv, &data);
 	if (!error)

@@ -1,5 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   arg_check.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:15 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 21:48:53 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
-#include <stdio.h>
 
 int	arg_check(int argc, char **argv, t_data *d)
 {
@@ -14,7 +25,7 @@ int	arg_check(int argc, char **argv, t_data *d)
 	return (0);
 }
 
-int check_if_all_number(int argc, char **argv, t_data *d)
+int	check_if_all_number(int argc, char **argv, t_data *d)
 {
 	int	index_hold;
 	int	index_check;
@@ -36,7 +47,7 @@ int check_if_all_number(int argc, char **argv, t_data *d)
 	return (0);
 }
 
-int check_if_repeated(int argc, char **argv, t_data *d)
+int	check_if_repeated(int argc, char **argv, t_data *d)
 {
 	int	index_hold;
 	int	index_check;
@@ -56,16 +67,17 @@ int check_if_repeated(int argc, char **argv, t_data *d)
 	return (0);
 }
 
-int check_if_bigger_int(int argc, char **argv, t_data *d)
+int	check_if_bigger_int(int argc, char **argv, t_data *d)
 {
-	int index;
-	long int test;
+	int			index;
+	long int	test;
+
 	index = 1;
 	test = 0;
 	while (index < argc)
 	{
-		test = ft_atoi(argv[index]);
-		if (test > 2147483647)
+		test = ft_atoli(argv[index]);
+		if (test > 2147483647 || test < -2147483648)
 			return (1);
 		index++;
 	}

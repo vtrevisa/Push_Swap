@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 23:14:48 by vtrevisa          #+#    #+#             */
-/*   Updated: 2022/10/19 16:20:13 by vitor            ###   ########.fr       */
+/*   Updated: 2023/02/15 21:42:47 by vtrevisa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,4 +99,7 @@ char	*htoa(unsigned long int lli, int flag);
 
 /*====FRACT-OL====*/
 double	ft_atof(const char *str);
+
+/*====PUSH_SWAP====*/
+long int	ft_atoli(const char *str);
 #endif

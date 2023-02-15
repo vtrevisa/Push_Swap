@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   swap.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:42 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 20:28:29 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-void swap_a(t_data *d)
+void	swap_a(t_data *d)
 {
 	int	swp;
 
@@ -14,7 +26,7 @@ void swap_a(t_data *d)
 	d->moves += 1;
 }
 
-void swap_b(t_data *d)
+void	swap_b(t_data *d)
 {
 	int	swp;
 
@@ -28,7 +40,7 @@ void swap_b(t_data *d)
 	d->moves += 1;
 }
 
-void swap_a_b(t_data *d)
+void	swap_a_b(t_data *d)
 {
 	int	swp;
 

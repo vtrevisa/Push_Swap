@@ -1,6 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   radix_sort.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:29 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 21:31:02 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-static int get_bit_size(int size)
+static int	get_bit_size(int size)
 {
 	int	max_bit;
 	int	bits_size;
@@ -15,7 +27,7 @@ static int get_bit_size(int size)
 	return (max_bit);
 }
 
-static int push_bit(t_data *d, int bit, int bigger_number)
+static void	push_bit(t_data *d, int bit, int bigger_number)
 {
 	int	index_list;
 
@@ -30,7 +42,7 @@ static int push_bit(t_data *d, int bit, int bigger_number)
 	}
 }
 
-void radix_sort(t_data *d)
+void	radix_sort(t_data *d)
 {
 	int	index_bit;
 	int	size_bigger_bits;
@@ -39,11 +51,14 @@ void radix_sort(t_data *d)
 	index_bit = 0;
 	size_bigger_bits = get_bit_size(d->max);
 	biggest_number = d->big;
-	while (index_bit < size_bigger_bits)
+	if (supervisor(d) == -1)
 	{
-		push_bit(d, index_bit, biggest_number);
-		while (d->b[d->top_b])
-			push_a(d);
-		index_bit++;
+		while (index_bit < size_bigger_bits)
+		{
+			push_bit(d, index_bit, biggest_number);
+			while (d->b[d->top_b])
+				push_a(d);
+			index_bit++;
+		}
 	}
 }

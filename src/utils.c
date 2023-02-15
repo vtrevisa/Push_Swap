@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   utils.c                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/15 20:18:45 by vtrevisa          #+#    #+#             */
+/*   Updated: 2023/02/15 22:24:51 by vtrevisa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../Include/push_swap.h"
 
-int get_max_nbr (t_data *d)
+int	get_max_nbr(t_data *d)
 {
 	int	max;
-	int index;
+	int	index;
 
 	index = 0;
 	max = d->a[index];
@@ -15,10 +27,10 @@ int get_max_nbr (t_data *d)
 	return (max);
 }
 
-int get_min_nbr (t_data *d)
+int	get_min_nbr(t_data *d)
 {
 	int	min;
-	int index;
+	int	index;
 
 	index = 0;
 	min = d->a[index];
@@ -30,12 +42,11 @@ int get_min_nbr (t_data *d)
 	return (min);
 }
 
-int supervisor(t_data *d)
+int	supervisor(t_data *d)
 {
-	int i;
+	int	i;
 
 	i = 1;
-
 	while (i < d->max)
 	{
 		if (d->a[i] > d->a[i - 1])
@@ -45,11 +56,11 @@ int supervisor(t_data *d)
 	return (0);
 }
 
-void simplifier(t_data *d)
+void	simplifier(t_data *d)
 {
 	int	*copy;
 	int	index;
-	int flag;
+	int	flag;
 	int	i;
 	int	j;
 
@@ -74,25 +85,22 @@ void simplifier(t_data *d)
 	free (copy);
 }
 
-int *sort_free(t_data *d, int *stack)
+int	*sort_free(t_data *d, int *stack)
 {
 	int	*rslt;
 	int	swp;
 	int	index;
 	int	cmp;
 
-	index = 0;
+	index = -1;
 	rslt = malloc (sizeof(int *) * d->max);
-	while (index < d->max)
-	{
+	while (++index < d->max)
 		rslt[index] = stack[index];
-		index++;
-	}
 	index = 0;
 	while (index < d->max)
 	{
-		cmp = index + 1;
-		while (cmp < d->max)
+		cmp = index;
+		while (++cmp < d->max)
 		{
 			if (rslt[index] > rslt[cmp])
 			{
@@ -100,7 +108,6 @@ int *sort_free(t_data *d, int *stack)
 				rslt[index] = rslt[cmp];
 				rslt[cmp] = swp;
 			}
-			cmp++;
 		}
 		index++;
 	}
