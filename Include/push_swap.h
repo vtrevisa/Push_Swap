@@ -5,7 +5,6 @@
 
 typedef struct s_data
 {
-	int err_code;
 	int	top_a;
 	int	top_b;
 	int	max;
@@ -14,15 +13,13 @@ typedef struct s_data
 	int	moves;
 	int	big;
 	int	small;
-	int	size_box;
-	int	size_l_box;
 	int *list;
 
 } t_data;
 
 /*----arg_check.c*/
 int	arg_check(int argc, char **argv, t_data *d);
-void handle_arg_error(int n);
+int check_if_bigger_int(int argc, char **argv, t_data *d);
 int check_if_repeated(int argc, char **argv, t_data *d);
 int check_if_all_number(int argc, char **argv, t_data *d);
 
@@ -62,7 +59,7 @@ void swap_a_b(t_data *d);
 /*----utils.c----*/
 int get_max_nbr (t_data *d);
 int get_min_nbr (t_data *d);
-int supervisor(t_data *d, int *n);
+int supervisor(t_data *d);
 void simplifier(t_data *d);
 int *sort_free(t_data *d, int *stack);
 

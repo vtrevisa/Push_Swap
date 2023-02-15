@@ -36,18 +36,14 @@ void radix_sort(t_data *d)
 	int	size_bigger_bits;
 	int	biggest_number;
 
-	while (supervisor(d, d->a) == -1)
+	index_bit = 0;
+	size_bigger_bits = get_bit_size(d->max);
+	biggest_number = d->big;
+	while (index_bit < size_bigger_bits)
 	{
-		index_bit = 0;
-		size_bigger_bits = get_bit_size(d->max);
-		biggest_number = d->big;
-
-		while (index_bit < size_bigger_bits)
-		{
-			push_bit(d, index_bit, biggest_number);
-			while (d->b[d->top_b])
-				push_a(d);
-			index_bit++;
-		}
+		push_bit(d, index_bit, biggest_number);
+		while (d->b[d->top_b])
+			push_a(d);
+		index_bit++;
 	}
 }

@@ -6,21 +6,22 @@ void get_parameters(int argc, char **argv, t_data *d)
 	int	r;
 
 	d->max = argc - 1;
-	i = 0;
-	r = d->max;
+	i = 1;
+	r = d->max - 1;
 	d->a = malloc (sizeof(int *) * d->max);
 	d->b = malloc (sizeof(int *) * d->max);
-	while (i < d->max)
+	while (i <= d->max)
 	{
-		d->a[r] = atoi(argv[i + 1]);
+		d->a[r] = ft_atoi(argv[i]);
 		d->b[r] = 0;
 		i++;
+		r--;
 	}
 	simplifier(d);
 	d->moves = 0;
 	d->big = get_max_nbr(d);
 	d->small = get_min_nbr(d);
-	d->top_a = d->max;
+	d->top_a = d->max - 1;
 	d->top_b = 0;
 }
 
@@ -60,13 +61,3 @@ void strct(t_data *d)
 	ft_printf("    a               b \n");
 	ft_printf("----------------------------\n");
 }
-
-/* void find_top(t_data *d)
-{
-	d->top_a = d->max;
-	d->top_b = d->max;
-	while (d->top_b >= 0 && d->b[d->top_b] == 0)
-		d->top_b--;
-	while (d->top_a >= 0 && d->a[d->top_a] == 0)
-		d->top_a--;
-} */

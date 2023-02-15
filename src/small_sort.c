@@ -2,14 +2,14 @@
 
 void push_swap_2(t_data *d)
 {
-	while (supervisor(d, d->a) == -1)
+	if (supervisor(d) == -1)
 		swap_a(d);
 }
 
 void push_swap_3(t_data *d)
 {
 	d->big = get_max_nbr(d);
-	while (supervisor(d, d->a) == -1)
+	if (supervisor(d) == -1)
 	{
 		if (d->a[2] == d->big)
 			rotate_a(d);
@@ -26,7 +26,7 @@ void push_swap_4(t_data *d)
 
 	index = 0;
 	d->small = get_min_nbr(d);
-	while (supervisor(d, d->a) == -1)
+	if (supervisor(d) == -1)
 	{
 		if (d->a[1] == d->small)
 			rotate_a(d);
@@ -48,7 +48,7 @@ void push_swap_5(t_data *d)
 	int	i;
 
 	d->small = get_min_nbr(d);
-	while (supervisor(d, d->a) == -1)
+	if (supervisor(d) == -1)
 	{
 		if (d->a[3] == d->small)
 			rotate_a(d);

@@ -26,14 +26,18 @@ int call_sort(int argc, t_data *data)
 int main(int argc, char **argv)
 {
 	t_data data;
+	int error;
 
-	if (!arg_check(argc, argv, &data))
+	error = arg_check(argc, argv, &data);
+	if (!error)
 	{
 		get_parameters(argc, argv, &data);
 		call_sort(argc, &data);
+		free_all(&data);
 	}
+	else if (error == 1)
+		return (0);
 	else
-		handle_arg_error(data.err_code);
-	free_all(&data);
+		write(2, "Error\n", 6);
 	return (0);
 }

@@ -6,7 +6,7 @@ void swap_a(t_data *d)
 
 	if (d->top_a > 0)
 	{
-		ft_printf("SWAP A\n");
+		ft_printf("sa\n");
 		swp = d->a[d->top_a];
 		d->a[d->top_a] = d->a[d->top_a - 1];
 		d->a[d->top_a - 1] = swp;
@@ -20,7 +20,7 @@ void swap_b(t_data *d)
 
 	if (d->top_b > 0)
 	{
-		ft_printf("SWAP B\n");
+		ft_printf("sb\n");
 		swp = d->b[d->top_b];
 		d->b[d->top_b] = d->b[d->top_b - 1];
 		d->b[d->top_b - 1] = swp;
@@ -32,16 +32,12 @@ void swap_a_b(t_data *d)
 {
 	int	swp;
 
-	if (d->top_a > 0)
+	if (d->top_a > 0 || d->top_b > 0)
 	{
-		ft_printf("SWAP A\n");
+		ft_printf("ss\n");
 		swp = d->a[d->top_a];
 		d->a[d->top_a] = d->a[d->top_a - 1];
 		d->a[d->top_a - 1] = swp;
-	}
-	if (d->top_b > 0)
-	{
-		ft_printf("SWAP B\n");
 		swp = d->b[d->top_b];
 		d->b[d->top_b] = d->b[d->top_b - 1];
 		d->b[d->top_b - 1] = swp;

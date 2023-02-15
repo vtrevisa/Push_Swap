@@ -5,7 +5,7 @@ void rotate_a(t_data *d)
 	int	swp;
 	int	index;
 
-	ft_printf("ROTATE A\n");
+	ft_printf("ra\n");
 	index = d->top_a;
 	swp = d->a[d->top_a];
 	while (index > 0)
@@ -15,7 +15,6 @@ void rotate_a(t_data *d)
 	}
 	d->a[index] = swp;
 	d->moves += 1;
-	strct(d);
 }
 
 void rotate_b(t_data *d)
@@ -23,7 +22,7 @@ void rotate_b(t_data *d)
 	int	swp;
 	int	index;
 
-	ft_printf("ROTATE B\n");
+	ft_printf("rb\n");
 	index = d->top_b;
 	swp = d->b[d->top_b];
 	while (index > 0)
@@ -33,7 +32,6 @@ void rotate_b(t_data *d)
 	}
 	d->b[index] = swp;
 	d->moves += 1;
-	strct(d);
 }
 
 void rotate_a_b(t_data *d)
@@ -43,7 +41,7 @@ void rotate_a_b(t_data *d)
 
 	index = d->top_a;
 	swp = d->a[d->top_a];
-		ft_printf("ROTATE A  B\n");
+	ft_printf("rr\n");
 	while (index > 0)
 	{
 		d->a[index] = d->a[index - 1];
@@ -59,5 +57,4 @@ void rotate_a_b(t_data *d)
 	}
 	d->b[index] = swp;
 	d->moves += 1;
-	strct(d);
 }

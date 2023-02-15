@@ -30,7 +30,7 @@ int get_min_nbr (t_data *d)
 	return (min);
 }
 
-int supervisor(t_data *d, int *n)
+int supervisor(t_data *d)
 {
 	int i;
 
@@ -38,11 +38,10 @@ int supervisor(t_data *d, int *n)
 
 	while (i < d->max)
 	{
-		if (n[i] > n[i - 1])
+		if (d->a[i] > d->a[i - 1])
 			return (-1);
 		i++;
 	}
-	ft_printf("SORTED! ;)\n");
 	return (0);
 }
 
@@ -65,7 +64,7 @@ void simplifier(t_data *d)
 		{
 			if (d->a[i] == copy[j] && flag == 0)
 			{
-				d->a[i] = j;
+				d->a[i] = j + 1;
 				flag = 1;
 			}
 			j++;
