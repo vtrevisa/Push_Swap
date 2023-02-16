@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:19:42 by vtrevisa          #+#    #+#             */
-/*   Updated: 2023/02/16 01:14:40 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:16:27 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ typedef struct s_data
 	int	max;
 	int	*a;
 	int	*b;
-	int	moves;
 	int	big;
 	int	small;
 	int	*list;

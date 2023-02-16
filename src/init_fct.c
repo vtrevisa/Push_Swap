@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_fct.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: vtrevisa <vtrevisa@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 20:17:59 by vtrevisa          #+#    #+#             */
-/*   Updated: 2023/02/15 22:43:37 by vtrevisa         ###   ########.fr       */
+/*   Updated: 2023/02/16 11:16:50 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	get_parameters(int argc, char **argv, t_data *d)
 		r--;
 	}
 	simplifier(d);
-	d->moves = 0;
 	d->big = get_max_nbr(d);
 	d->small = get_min_nbr(d);
 	d->top_a = d->max - 1;
