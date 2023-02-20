@@ -6,7 +6,7 @@
 /*   By: vitor <vitor@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/15 23:19:42 by vtrevisa          #+#    #+#             */
-/*   Updated: 2023/02/17 17:07:05 by vitor            ###   ########.fr       */
+/*   Updated: 2023/02/20 10:51:56 by vitor            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_data
 	int	big;
 	int	small;
 	int	*list;
-	int moves;
+	int	moves;
 
 }	t_data;
 
