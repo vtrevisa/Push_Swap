@@ -30,5 +30,6 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
+	$(MAKE)	fclean -C $(LPATH)
 
 re: fclean all
